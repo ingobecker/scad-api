@@ -58,6 +58,12 @@ test('translate (multiple items in array, 2d)', t => {
   sideEquals(t, obs.sides[obs.sides.length - 1], [[0, 10], [0.9999999999999998, 10]])
 })
 
+test('rotate (single item angle axis style)', t => {
+  const op1 = cube()
+  const obs = rotate(Math.PI, [0, 1, 0], op1)
+  t.deepEqual(obs.properties.cube.center, {_x: 0.5266504075063266, _y: 0.5, _z: 0.47184674235753715})
+})
+
 test('rotate (single item)', t => {
   const op1 = cube()
   const obs = rotate([0, Math.PI, 0], op1)
